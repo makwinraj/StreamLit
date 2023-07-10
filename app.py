@@ -26,19 +26,19 @@ if uploaded_file is not None:
     item_n=dataframe["Item Name (Items)"]
     basic_r=dataframe["Basic Rate (as per Stock UOM) (Items)"]
     item_g=dataframe["Item Group (Items)"]
-    supplier_w=dataframe["Supplier warranty"]
+    #supplier_w=dataframe["Supplier warranty"]
     #serialnum=dataframe["Serial Number"]
 
     
     url="https://deverp.primeassetsource.com/api/resource/Stock Entry"
     header={"Content-Type":"application/json","Authorization":api_ks}
-    for (Item_c,Qty,Item_n,Basic_r,Item_g,Supplier_w)  in zip(item_c,qty,item_n,basic_r,item_g,supplier_w):
+    for (Item_c,Qty,Item_n,Basic_r,Item_g)  in zip(item_c,qty,item_n,basic_r,item_g):
         body= {
         
        
         "stock_entry_type": "Material Receipt",
         "company": "Prime Asset Source",
-          "supplier_warranty": Supplier_w,
+          #"supplier_warranty": Supplier_w,
           #"serial_number":Serial_n,
     
       
